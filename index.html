@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NebulaBots Studio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0a0a0a;
+      color: #eee;
+    }
+    header {
+      text-align: center;
+      padding: 80px 20px 40px 20px;
+      background: linear-gradient(180deg, #001f3f, #00ffff);
+    }
+    header img {
+      width: 120px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ffff;
+    }
+    header h1 {
+      font-size: 3.5em;
+      font-weight: bold;
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff;
+      margin-bottom: 20px;
+    }
+    header p {
+      font-size: 1.5em;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 15px 35px;
+      font-size: 1.2em;
+      color: #fff;
+      text-decoration: none;
+      background: linear-gradient(90deg, #00ffff, #1e90ff);
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ffff;
+      transition: 0.3s;
+    }
+    .cta-button:hover {
+      background: linear-gradient(90deg, #1e90ff, #00ffff);
+      box-shadow: 0 0 30px #00ffff;
+    }
+    section.plans {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding: 50px 20px;
+    }
+    .plan {
+      background: linear-gradient(145deg, #1a1a1a, #111);
+      border-radius: 20px;
+      width: 280px;
+      padding: 35px 20px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+      transition: transform 0.3s;
+    }
+    .plan:hover { transform: scale(1.05); }
+    .plan h2 { font-size: 1.8em; margin-bottom: 10px; color: #00ffff; text-shadow: 0 0 10px #1e90ff; }
+    .plan p { font-size: 1.1em; margin: 5px 0; color: #ccc; }
+    .price { font-size: 2em; margin: 15px 0; color: #00ffff; font-weight: bold; }
+    .discount { font-size: 1em; color: #ff5e5e; font-weight: bold; margin-bottom: 10px; }
+    .plan a { display: inline-block; margin-top: 10px; padding: 10px 20px; border-radius: 10px; text-decoration: none; color: #fff; background: linear-gradient(90deg, #00ffff, #1e90ff); transition: background 0.3s; }
+    .plan a:hover { background: linear-gradient(90deg, #1e90ff, #00ffff); }
+    footer { text-align: center; padding: 30px 20px; color: #777; font-size: 0.9em; background: #0a0a0a; }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="NebulaBots Studio Logo">
+  <h1>NebulaBots Studio</h1>
+  <p>¡Personaliza tu bot y hazlo único para tu servidor! 🌌</p>
+  <a href="#planes" class="cta-button">Ver Planes</a>
+</header>
+
+<section id="planes" class="plans">
+
+  <div class="plan">
+    <div class="discount">50% de descuento ¡Lanzamiento!</div>
+    <h2>Plan Básico</h2>
+    <p>5 comandos personalizados</p>
+    <p>Embed simple</p>
+    <div class="price">50 ROBUX</div>
+    <a href="#">Abrir Ticket</a>
+  </div>
+
+  <div class="plan">
+    <div class="discount">50% de descuento ¡Lanzamiento!</div>
+    <h2>Plan Intermedio</h2>
+    <p>10 comandos personalizados</p>
+    <p>Embeds personalizados</p>
+    <p>Sistema básico de permisos</p>
+    <div class="price">100 ROBUX</div>
+    <a href="#">Abrir Ticket</a>
+  </div>
+
+  <div class="plan">
+    <div class="discount">50% de descuento ¡Lanzamiento!</div>
+    <h2>Plan Pro</h2>
+    <p>20 comandos</p>
+    <p>Economía o moderación básica</p>
+    <p>Embeds premium + botones</p>
+    <div class="price">200 ROBUX</div>
+    <a href="#">Abrir Ticket</a>
+  </div>
+
+  <div class="plan">
+    <div class="discount">50% de descuento ¡Lanzamiento!</div>
+    <h2>Plan Ultra</h2>
+    <p>Comandos ilimitados</p>
+    <p>Sistemas avanzados (tickets, niveles, economía completa)</p>
+    <p>Soporte prioritario</p>
+    <div class="price">350+ ROBUX</div>
+    <a href="#">Abrir Ticket</a>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 NebulaBots Studio | Al comprar, aceptas nuestros términos y condiciones
+</footer>
+
+</body>
+</html>
