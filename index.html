@@ -22,8 +22,8 @@ header img{width:150px;margin-bottom:20px;border-radius:20px;box-shadow:0 0 35px
 @keyframes floatLogo{0%{transform:translateY(0);}100%{transform:translateY(-15px);}}
 header h1{font-size:4em;font-weight:bold;background:linear-gradient(90deg,#00aaff,#0066ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 25px #00ffff;animation:glow 2s infinite alternate;}
 header p{font-size:1.5em;max-width:800px;margin:0 auto 30px auto;line-height:1.6;color:#ccc;}
-.cta-button{display:inline-block;padding:15px 40px;font-size:1.2em;color:#fff;background:linear-gradient(90deg,#00aaff,#0066ff);border-radius:20px;box-shadow:0 0 25px #00aaff;transition:0.3s;animation:pulse 2s infinite;}
-.cta-button:hover{background:linear-gradient(90deg,#0066ff,#00aaff);box-shadow:0 0 45px #00ffff;}
+.cta-button{display:inline-block;padding:15px 40px;font-size:1.2em;color:#fff;background:linear-gradient(90deg,#00aaff,#0066ff);border-radius:20px;box-shadow:0 0 25px #00aaff;transition:0.6s;animation:pulse 2s infinite;}
+.cta-button:hover{background:linear-gradient(90deg,#0066ff,#00aaff);box-shadow:0 0 45px #00ffff;transform:scale(1.05);}
 @keyframes glow{0%{text-shadow:0 0 20px #00ffff;}100%{text-shadow:0 0 50px #0066ff;}}
 @keyframes pulse{0%{box-shadow:0 0 25px #00aaff;}50%{box-shadow:0 0 50px #00ffff;}100%{box-shadow:0 0 25px #00aaff;}}
 
@@ -84,7 +84,7 @@ footer{text-align:center;padding:50px 20px;background:#0a0a0a;color:#777;font-si
 <img src="logo.png" alt="Logo NebulaBots">
 <h1>NebulaBots Studio</h1>
 <p>Creación de bots totalmente personalizados. Comandos, sistemas de economía, moderación, tickets, niveles y soporte profesional para tu servidor.</p>
-<a href="#planes" class="cta-button">Ver Planes</a>
+<a href="#planes" class="cta-button" id="verPlanesBtn">Ver Planes</a>
 </header>
 
 <section id="planes">
@@ -98,7 +98,6 @@ footer{text-align:center;padding:50px 20px;background:#0a0a0a;color:#777;font-si
 <div class="price">50 ROBUX</div>
 <button class="open-modal" data-plan="basico">Más info</button>
 </div>
-
 <div class="plan">
 <div class="discount">50% de descuento ¡Lanzamiento!</div>
 <h3>Plan Intermedio</h3>
@@ -108,7 +107,6 @@ footer{text-align:center;padding:50px 20px;background:#0a0a0a;color:#777;font-si
 <div class="price">100 ROBUX</div>
 <button class="open-modal" data-plan="intermedio">Más info</button>
 </div>
-
 <div class="plan">
 <div class="discount">50% de descuento ¡Lanzamiento!</div>
 <h3>Plan Pro</h3>
@@ -118,7 +116,6 @@ footer{text-align:center;padding:50px 20px;background:#0a0a0a;color:#777;font-si
 <div class="price">200 ROBUX</div>
 <button class="open-modal" data-plan="pro">Más info</button>
 </div>
-
 <div class="plan">
 <div class="discount">50% de descuento ¡Lanzamiento!</div>
 <h3>Plan Ultra</h3>
@@ -133,7 +130,7 @@ footer{text-align:center;padding:50px 20px;background:#0a0a0a;color:#777;font-si
 
 <section id="info">
 <h2>Sobre NebulaBots Studio</h2>
-<p>En NebulaBots Studio creamos bots totalmente adaptados a tus necesidades. Todos nuestros planes incluyen soporte técnico directo, actualizaciones, mantenimiento y atención premium. Nuestro objetivo es que tu servidor de Discord tenga una experiencia completa y profesional.</p>
+<p>En NebulaBots Studio creamos bots totalmente adaptados a tus necesidades. Todos nuestros planes incluyen soporte técnico directo, actualizaciones, mantenimiento y atención premium.</p>
 <div class="discord-links">
 <a href="https://discord.com/users/lil_drakko" target="_blank">💬 Mi perfil</a>
 <a href="https://discord.gg/4tpCsw4KDE" target="_blank">🏪 Servidor tienda</a>
@@ -141,13 +138,12 @@ footer{text-align:center;padding:50px 20px;background:#0a0a0a;color:#777;font-si
 </div>
 </section>
 
-<!-- Modal -->
 <div class="modal" id="modal">
 <div class="modal-content" id="modal-content">
 <span class="close">&times;</span>
 <h3 id="modal-title">Plan Detalles</h3>
 <p id="modal-desc">Aquí va toda la información detallada del plan.</p>
-<a href="#" id="modal-link" class="discord-link" target="_blank">Ir a Discord</a>
+<a href="https://discord.gg/4tpCsw4KDE" id="modal-link" class="discord-link" target="_blank">Ir al servidor tienda</a>
 </div>
 </div>
 
@@ -156,7 +152,13 @@ footer{text-align:center;padding:50px 20px;background:#0a0a0a;color:#777;font-si
 </footer>
 
 <script>
-// Partículas y cursor
+// Scroll lento para botón Ver Planes
+document.getElementById('verPlanesBtn').addEventListener('click',e=>{
+  e.preventDefault();
+  document.getElementById('planes').scrollIntoView({behavior:'smooth'});
+});
+
+// Partículas con cursor
 const particlesCount=200;
 const particlesContainer=document.getElementById('particles');
 for(let i=0;i<particlesCount;i++){
@@ -193,10 +195,10 @@ document.querySelectorAll('.open-modal').forEach(btn=>{
     e.preventDefault();
     const plan=btn.dataset.plan;
     switch(plan){
-      case'basico':modalTitle.textContent='Plan Básico';modalDesc.textContent='5 comandos personalizados, embed simple, soporte técnico básico y mantenimiento incluido. Ideal para probar ideas y pequeños servidores.';modalLink.href='https://discord.gg/4tpCsw4KDE';break;
-      case'intermedio':modalTitle.textContent='Plan Intermedio';modalDesc.textContent='10 comandos personalizados, embeds, permisos básicos, soporte técnico directo y actualizaciones. Perfecto para servidores medianos.';modalLink.href='https://discord.gg/4tpCsw4KDE';break;
-      case'pro':modalTitle.textContent='Plan Pro';modalDesc.textContent='20 comandos, economía o moderación básica, embeds premium y botones, soporte técnico avanzado y mantenimiento regular.';modalLink.href='https://discord.gg/4tpCsw4KDE';break;
-      case'ultra':modalTitle.textContent='Plan Ultra';modalDesc.textContent='Comandos ilimitados, sistemas avanzados de tickets, niveles, economía completa, soporte prioritario, actualizaciones premium y atención personalizada.';modalLink.href='https://discord.gg/4tpCsw4KDE';break;
+      case'basico':modalTitle.textContent='Plan Básico';modalDesc.textContent='5 comandos, embed simple, soporte básico, mantenimiento incluido.';modalLink.href='https://discord.gg/4tpCsw4KDE';break;
+      case'intermedio':modalTitle.textContent='Plan Intermedio';modalDesc.textContent='10 comandos, embeds, permisos básicos, soporte directo, actualizaciones incluidas.';modalLink.href='https://discord.gg/4tpCsw4KDE';break;
+      case'pro':modalTitle.textContent='Plan Pro';modalDesc.textContent='20 comandos, economía/moderación básica, embeds premium y botones, soporte avanzado.';modalLink.href='https://discord.gg/4tpCsw4KDE';break;
+      case'ultra':modalTitle.textContent='Plan Ultra';modalDesc.textContent='Comandos ilimitados, sistemas avanzados, soporte prioritario, actualizaciones premium.';modalLink.href='https://discord.gg/4tpCsw4KDE';break;
     }
     modal.classList.add('show');
   });
