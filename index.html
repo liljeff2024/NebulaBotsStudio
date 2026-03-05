@@ -3,42 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NebulaBots Studio - Definitivo</title>
+<title>NebulaBots Studio - Ultra PRO</title>
 <style>
 /* Reset y general */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#050505;color:#eee;overflow-x:hidden;scroll-behavior:smooth;}
 a{text-decoration:none;color:inherit;}
-section, header, footer{opacity:0;transform:translateY(60px);transition:all 1.2s ease-in-out;}
-/* Partículas */
+section, header, footer, .faq-item{opacity:0;transform:translateY(60px);transition:all 1s ease-in-out;}
+
+/* Fondo partículas */
 #particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;}
 .particle{position:absolute;border-radius:50%;background:rgba(0,170,255,0.7);width:2px;height:2px;animation:float linear infinite;}
 @keyframes float{0%{transform:translateY(0);}100%{transform:translateY(-110vh);}}
+
 /* Header */
-header{text-align:center;padding:120px 20px 60px;position:relative;background:linear-gradient(180deg,#001f3f,#000010);}
+header{text-align:center;padding:140px 20px 60px;position:relative;background:linear-gradient(180deg,#001f3f,#000010);}
 header img{width:220px;margin-bottom:20px;border-radius:20px;box-shadow:0 0 55px #00aaff;animation:floatLogo 4s ease-in-out infinite alternate;}
 @keyframes floatLogo{0%{transform:translateY(0);}100%{transform:translateY(-25px);}}
 header h1{font-size:4em;font-weight:bold;background:linear-gradient(90deg,#00ffff,#1e90ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 25px #00ffff;animation:glow 2s infinite alternate;}
-header p{font-size:1.5em;max-width:800px;margin:0 auto 30px auto;line-height:1.6;color:#ccc;animation:fadeInUp 1.2s forwards;}
+header p{font-size:1.5em;max-width:900px;margin:0 auto 30px auto;line-height:1.6;color:#ccc;animation:slideUp 1s ease forwards;}
 .cta-button{display:inline-block;padding:15px 45px;font-size:1.2em;color:#fff;background:linear-gradient(90deg,#00ffff,#1e90ff);border-radius:25px;box-shadow:0 0 30px #00aaff;transition:0.6s;animation:pulse 2s infinite;}
 .cta-button:hover{background:linear-gradient(90deg,#1e90ff,#00ffff);box-shadow:0 0 60px #00ffff;transform:scale(1.1);}
 @keyframes glow{0%{text-shadow:0 0 20px #00ffff;}100%{text-shadow:0 0 55px #1e90ff;}}
 @keyframes pulse{0%{box-shadow:0 0 25px #00aaff;}50%{box-shadow:0 0 60px #00ffff;}100%{box-shadow:0 0 25px #00aaff;}}
-@keyframes fadeInUp{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
+@keyframes slideUp{0%{opacity:0;transform:translateY(60px);}100%{opacity:1;transform:translateY(0);}}
+
 /* Menú fijo animado */
 nav{position:fixed;top:0;left:0;width:100%;background:rgba(10,10,10,0.85);padding:15px;display:flex;justify-content:center;gap:25px;z-index:999;border-bottom:1px solid #00aaff;animation:slideNav 1s ease-out forwards;opacity:0;transform:translateY(-60px);}
 @keyframes slideNav{0%{opacity:0;transform:translateY(-60px);}100%{opacity:1;transform:translateY(0);}}
 nav a{color:#00ffff;font-weight:bold;transition:0.5s;animation:glowNav 2s infinite alternate;}
 nav a:hover{color:#fff;text-shadow:0 0 20px #00ffff;transform:scale(1.05);}
 @keyframes glowNav{0%{text-shadow:0 0 5px #00ffff;}100%{text-shadow:0 0 25px #1e90ff;}}
+
 /* Secciones */
 section{padding:80px 20px;transition:opacity 1s, transform 1s;}
 section h2{font-size:3em;color:#00ffff;margin-bottom:20px;text-shadow:0 0 20px #1e90ff;animation:neon 2s infinite alternate;}
-section p{max-width:850px;margin:0 auto;font-size:1.3em;line-height:1.7;color:#ccc;text-align:center;}
+section p{max-width:900px;margin:0 auto;font-size:1.3em;line-height:1.7;color:#ccc;text-align:center;}
 section .discord-links{margin-top:30px;display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
 .discord-links a{display:flex;align-items:center;gap:10px;padding:12px 20px;background:linear-gradient(90deg,#00ffff,#1e90ff);border-radius:15px;color:#fff;font-weight:bold;box-shadow:0 0 25px #00aaff;transition:0.5s;animation:pulse 2s infinite;}
 .discord-links a:hover{background:linear-gradient(90deg,#1e90ff,#00ffff);box-shadow:0 0 50px #00ffff;transform:scale(1.05);}
 @keyframes neon{0%{text-shadow:0 0 15px #00ffff;}100%{text-shadow:0 0 50px #1e90ff;}}
+
 /* Planes */
 .plans{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;}
 .plan{background:linear-gradient(145deg,#111,#1a1a1a);border-radius:25px;width:300px;padding:35px 20px;text-align:center;box-shadow:0 0 40px rgba(0,170,255,0.7);transition:transform 0.7s,box-shadow 0.7s;position:relative;}
@@ -46,10 +51,11 @@ section .discord-links{margin-top:30px;display:flex;flex-wrap:wrap;justify-conte
 .plan h3{color:#00ffff;margin-bottom:15px;text-shadow:0 0 15px #1e90ff;}
 .plan p{color:#ccc;margin:8px 0;}
 .plan .price{font-size:2em;color:#00ffff;font-weight:bold;margin:15px 0;}
-.plan .discount{color:#ff5e5e;font-weight:bold;margin-bottom:10px;position:absolute;top:15px;right:15px;background:rgba(255,0,0,0.85);padding:5px 10px;border-radius:15px;font-size:0.9em;}
-.plan .popular{position:absolute;top:15px;left:15px;background:#ffdd00;color:#000;font-weight:bold;padding:5px 12px;border-radius:15px;font-size:0.9em;box-shadow:0 0 20px #ffdd00;}
+.plan .discount{color:#ff5e5e;font-weight:bold;margin-bottom:10px;animation:slideUp 1s forwards;}
+.plan .popular{position:absolute;top:-15px;right:10px;background:#ff5e5e;color:#fff;padding:5px 15px;border-radius:15px;font-weight:bold;box-shadow:0 0 15px #ff5e5e;animation:glow 2s infinite alternate;}
 .plan button{display:inline-block;margin-top:12px;padding:12px 25px;border-radius:20px;background:linear-gradient(90deg,#00ffff,#1e90ff);color:#fff;font-weight:bold;box-shadow:0 0 30px #00aaff;transition:0.5s;cursor:pointer;animation:pulse 2s infinite;}
 .plan button:hover{background:linear-gradient(90deg,#1e90ff,#00ffff);box-shadow:0 0 60px #00ffff;transform:scale(1.1);}
+
 /* Modal */
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);justify-content:center;align-items:center;z-index:1000;}
 .modal-content{background:linear-gradient(145deg,#111,#1a1a1a);border-radius:25px;padding:35px;width:90%;max-width:650px;position:relative;box-shadow:0 0 70px rgba(0,170,255,0.85);transform:scale(0);opacity:0;transition:all 0.6s ease;}
@@ -60,19 +66,25 @@ section .discord-links{margin-top:30px;display:flex;flex-wrap:wrap;justify-conte
 .modal-content .close:hover{color:#00ffff;transform:scale(1.2);}
 .modal-content .discord-link{display:inline-block;padding:12px 25px;border-radius:20px;background:linear-gradient(90deg,#00ffff,#1e90ff);color:#fff;box-shadow:0 0 30px #00aaff;transition:0.5s;animation:pulse 2s infinite;}
 .modal-content .discord-link:hover{background:linear-gradient(90deg,#1e90ff,#00ffff);box-shadow:0 0 60px #00ffff;transform:scale(1.05);}
+
 /* FAQ */
-.faq-item{background:linear-gradient(145deg,#111,#1a1a1a);margin:15px auto;padding:20px;border-radius:20px;max-width:700px;cursor:pointer;box-shadow:0 0 30px rgba(0,170,255,0.7);transition:0.5s;}
-.faq-question{font-weight:bold;color:#00ffff;text-shadow:0 0 15px #1e90ff;display:flex;justify-content:space-between;align-items:center;}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.5s ease,opacity 0.5s ease, padding 0.5s;opacity:0;color:#ccc;margin-top:10px;}
-.faq-answer.show{max-height:500px;opacity:1;padding-top:10px;box-shadow:0 0 20px #00ffff;}
-.faq-question.active{color:#ffdd00;text-shadow:0 0 25px #ffdd00;}
+.faq{max-width:900px;margin:0 auto;}
+.faq-item{background:linear-gradient(145deg,#111,#1a1a1a);margin-bottom:15px;border-radius:20px;padding:20px;box-shadow:0 0 25px #00aaff;cursor:pointer;transition:0.5s;animation:slideUp 0.7s forwards;}
+.faq-item:hover{box-shadow:0 0 50px #00ffff;}
+.faq-item h4{color:#00ffff;display:flex;justify-content:space-between;align-items:center;text-shadow:0 0 15px #1e90ff;}
+.faq-item p{margin-top:10px;color:#ccc;display:none;}
+.faq-item.active p{display:block;animation:slideDown 0.5s ease forwards;}
+@keyframes slideDown{0%{opacity:0;transform:translateY(-15px);}100%{opacity:1;transform:translateY(0);}}
+
 /* Footer */
 footer{text-align:center;padding:50px 20px;background:#0a0a0a;color:#777;font-size:0.95em;}
+
 /* Responsive */
 @media(max-width:768px){header h1{font-size:3em;} .plans{flex-direction:column;align-items:center;} .plan{width:90%;}}
 </style>
 </head>
 <body>
+
 <div id="particles"></div>
 
 <nav>
@@ -86,7 +98,7 @@ footer{text-align:center;padding:50px 20px;background:#0a0a0a;color:#777;font-si
 <header id="inicio">
 <img src="logo.png" alt="Logo NebulaBots">
 <h1>NebulaBots Studio</h1>
-<p>Creación de bots totalmente personalizados. Comandos, economía, moderación, tickets, niveles y soporte premium.</p>
+<p>Creación de bots totalmente personalizados. Comandos, economía, moderación, tickets, niveles y soporte profesional.</p>
 <a href="#planes" class="cta-button" id="verPlanesBtn">Ver Planes</a>
 </header>
 
@@ -94,41 +106,34 @@ footer{text-align:center;padding:50px 20px;background:#0a0a0a;color:#777;font-si
 <h2>Nuestros Planes</h2>
 <div class="plans">
 <div class="plan">
-<div class="discount">50% Lanzamiento</div>
+<div class="discount">50% de descuento ¡Lanzamiento!</div>
 <h3>Plan Básico</h3>
-<p>5 comandos</p>
+<p>5 comandos personalizados</p>
 <p>Embed simple</p>
 <div class="price">50 ROBUX</div>
 <button class="open-modal" data-plan="basico">Más info</button>
 </div>
-
 <div class="plan">
-<div class="discount">50% Lanzamiento</div>
+<div class="discount">50% de descuento ¡Lanzamiento!</div>
 <h3>Plan Intermedio</h3>
-<p>10 comandos</p>
+<p>10 comandos personalizados</p>
 <p>Embeds personalizados</p>
 <p>Sistema básico de permisos</p>
 <div class="price">100 ROBUX</div>
 <button class="open-modal" data-plan="intermedio">Más info</button>
 </div>
-
 <div class="plan">
-<div class="discount">50% Lanzamiento</div>
-<div class="popular">★ Más popular</div>
+<div class="popular">Más popular</div>
+<div class="discount">50% de descuento ¡Lanzamiento!</div>
 <h3>Plan Pro</h3>
-<p>20 comandos</p>
-<p>Economía o moderación básica</p>
-<p>Embeds premium + botones</p>
+<p>20 comandos, economía o moderación básica, embeds premium, botones y soporte avanzado</p>
 <div class="price">200 ROBUX</div>
 <button class="open-modal" data-plan="pro">Más info</button>
 </div>
-
 <div class="plan">
-<div class="discount">50% Lanzamiento</div>
+<div class="discount">50% de descuento ¡Lanzamiento!</div>
 <h3>Plan Ultra</h3>
-<p>Comandos ilimitados</p>
-<p>Sistemas avanzados (tickets, niveles, economía completa)</p>
-<p>Soporte prioritario</p>
+<p>Comandos ilimitados, sistemas avanzados (tickets, niveles, economía completa), soporte prioritario</p>
 <div class="price">350+ ROBUX</div>
 <button class="open-modal" data-plan="ultra">Más info</button>
 </div>
@@ -136,34 +141,33 @@ footer{text-align:center;padding:50px 20px;background:#0a0a0a;color:#777;font-si
 </section>
 
 <section id="faq">
-<h2>FAQ</h2>
+<h2>Preguntas Frecuentes</h2>
+<div class="faq">
 <div class="faq-item">
-<div class="faq-question">¿Qué incluye el Plan Básico?<span>+</span></div>
-<div class="faq-answer">Incluye 5 comandos personalizados, embed simple, soporte básico y mantenimiento inicial.</div>
+<h4>¿Cómo solicito un bot personalizado?<span>+</span></h4>
+<p>Abre un ticket en nuestro servidor o envía un DM a lil_drakko con los detalles de tu proyecto.</p>
 </div>
 <div class="faq-item">
-<div class="faq-question">¿Qué incluye el Plan Intermedio?<span>+</span></div>
-<div class="faq-answer">Incluye 10 comandos, embeds avanzados, sistema básico de permisos, soporte directo y actualizaciones.</div>
+<h4>¿Puedo pedir cambios después de iniciado el proyecto?<span>+</span></h4>
+<p>Se permiten cambios menores. Cambios grandes pueden generar costos adicionales según la política.</p>
 </div>
 <div class="faq-item">
-<div class="faq-question">¿Qué incluye el Plan Pro?<span>+</span></div>
-<div class="faq-answer">20 comandos, economía/moderación básica, embeds premium con botones interactivos, soporte avanzado y actualizaciones premium.</div>
+<h4>¿Hay reembolsos disponibles?<span>+</span></h4>
+<p>Solo dentro de las primeras 48 horas antes de la entrega. Después no se realizan reembolsos.</p>
 </div>
-<div class="faq-item">
-<div class="faq-question">¿Qué incluye el Plan Ultra?<span>+</span></div>
-<div class="faq-answer">Comandos ilimitados, sistemas avanzados, soporte prioritario y mantenimiento premium.</div>
 </div>
 </section>
 
 <section id="terminos">
 <h2>Términos y Condiciones</h2>
-<p>Información general, pagos, reembolsos, hosting, modificaciones, propiedad intelectual y soporte. Todos los detalles se ajustan a NebulaBots Studio.</p>
+<p>© 2026 NebulaBots Studio. Al pagar, aceptas todos los términos oficiales, incluyendo pagos, reembolsos, propiedad intelectual y soporte. Consulta la sección de información general para detalles completos.</p>
 </section>
 
 <section id="contacto">
 <h2>Contacto</h2>
+<p>💬 Abre un ticket en nuestro servidor o envía un DM a <strong>lil_drakko</strong> para solicitar tu bot.</p>
 <div class="discord-links">
-<a href="https://discord.gg/bFGs24vaJ9" target="_blank">💬 Servidor tienda</a>
+<a href="https://discord.gg/bFGs24vaJ9" target="_blank">🏪 Servidor tienda</a>
 </div>
 </section>
 
@@ -182,99 +186,80 @@ footer{text-align:center;padding:50px 20px;background:#0a0a0a;color:#777;font-si
 </footer>
 
 <script>
+// Scroll lento para Ver Planes
+document.getElementById('verPlanesBtn').addEventListener('click',e=>{
+e.preventDefault();
+document.getElementById('planes').scrollIntoView({behavior:'smooth'});
+});
+
+// Partículas
+const particlesCount=200;
+const particlesContainer=document.getElementById('particles');
+for(let i=0;i<particlesCount;i++){
+const p=document.createElement('div');
+p.classList.add('particle');
+p.style.left=Math.random()*100+'vw';
+p.style.top=Math.random()*100+'vh';
+p.style.width=(Math.random()*3+1)+'px';
+p.style.height=(Math.random()*3+1)+'px';
+p.style.animationDuration=(Math.random()*20+10)+'s';
+particlesContainer.appendChild(p);
+}
+document.addEventListener('mousemove',e=>{
+const particle=document.createElement('div');
+particle.classList.add('particle');
+particle.style.left=e.clientX+'px';
+particle.style.top=e.clientY+'px';
+particle.style.width='2px';
+particle.style.height='2px';
+particle.style.background='rgba(0,170,255,0.7)';
+particle.style.animation='float 10s linear forwards';
+particlesContainer.appendChild(particle);
+setTimeout(()=>particlesContainer.removeChild(particle),1000);
+});
+
 // Modal
 const modal=document.getElementById('modal');
 const modalContent=document.getElementById('modal-content');
 const modalTitle=document.getElementById('modal-title');
 const modalDesc=document.getElementById('modal-desc');
 const modalLink=document.getElementById('modal-link');
-
 document.querySelectorAll('.open-modal').forEach(btn=>{
 btn.addEventListener('click',e=>{
 e.preventDefault();
 const plan=btn.dataset.plan;
 switch(plan){
-case 'basico':
-modalTitle.textContent='Plan Básico';
-modalDesc.innerHTML='5 comandos personalizados, embed simple, soporte básico y mantenimiento inicial.';
-modalLink.href='https://discord.gg/bFGs24vaJ9';
-break;
-case 'intermedio':
-modalTitle.textContent='Plan Intermedio';
-modalDesc.innerHTML='10 comandos, embeds avanzados, sistema básico de permisos, soporte directo y actualizaciones.';
-modalLink.href='https://discord.gg/bFGs24vaJ9';
-break;
-case 'pro':
-modalTitle.innerHTML='Plan Pro <span style="color:#ffdd00;font-weight:bold;">★ Más popular</span>';
-modalDesc.innerHTML='20 comandos, economía/moderación básica, embeds premium con botones interactivos, soporte avanzado y actualizaciones premium.';
-modalLink.href='https://discord.gg/bFGs24vaJ9';
-break;
-case 'ultra':
-modalTitle.textContent='Plan Ultra';
-modalDesc.innerHTML='Comandos ilimitados, sistemas avanzados, soporte prioritario y mantenimiento premium.';
-modalLink.href='https://discord.gg/bFGs24vaJ9';
-break;
+case'basico':modalTitle.textContent='Plan Básico';modalDesc.textContent='Incluye 5 comandos personalizados, embed simple y soporte básico. Actualizaciones y mantenimiento incluidos.';modalLink.href='https://discord.gg/bFGs24vaJ9';break;
+case'intermedio':modalTitle.textContent='Plan Intermedio';modalDesc.textContent='Incluye 10 comandos, embeds personalizados, sistema de permisos básico, soporte directo y actualizaciones incluidas.';modalLink.href='https://discord.gg/bFGs24vaJ9';break;
+case'pro':modalTitle.textContent='Plan Pro';modalDesc.textContent='Incluye 20 comandos, economía o moderación básica, embeds premium, botones interactivos y soporte avanzado. Es nuestro plan más popular.';modalLink.href='https://discord.gg/bFGs24vaJ9';break;
+case'ultra':modalTitle.textContent='Plan Ultra';modalDesc.textContent='Comandos ilimitados, sistemas avanzados como tickets, niveles, economía completa, soporte prioritario y actualizaciones premium.';modalLink.href='https://discord.gg/bFGs24vaJ9';break;
 }
 modal.classList.add('show');
 });
 });
-
 document.querySelector('.close').addEventListener('click',()=>{modal.classList.remove('show');});
 window.addEventListener('click',e=>{if(e.target==modal) modal.classList.remove('show');});
 
 // Slide-in secciones
-const sections=document.querySelectorAll('header,nav,section');
+const sections=document.querySelectorAll('section,header,nav');
 const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity=1;entry.target.style.transform='translateY(0)';}});
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.style.opacity=1;
+            entry.target.style.transform='translateY(0)';
+        }
+    });
 },{threshold:0.1});
 sections.forEach(sec=>observer.observe(sec));
 
-// Scroll suave
-document.getElementById('verPlanesBtn').addEventListener('click',e=>{
-e.preventDefault();
-document.getElementById('planes').scrollIntoView({behavior:'smooth'});
-});
-
 // FAQ interactivo
-const faqs=document.querySelectorAll('.faq-item');
-faqs.forEach(item=>{
-const question=item.querySelector('.faq-question');
-question.addEventListener('click',()=>{
-const answer=item.querySelector('.faq-answer');
-answer.classList.toggle('show');
-question.classList.toggle('active');
-});
-});
-
-// Partículas// Partículas 
-const particlesCount = 200;
-const particlesContainer = document.getElementById('particles');
-
-for (let i = 0; i < particlesCount; i++) {
-    const p = document.createElement('div');
-    p.classList.add('particle');
-    p.style.left = Math.random() * 100 + 'vw';
-    p.style.top = Math.random() * 100 + 'vh';
-    p.style.width = (Math.random() * 3 + 1) + 'px';
-    p.style.height = (Math.random() * 3 + 1) + 'px';
-    p.style.animationDuration = (Math.random() * 20 + 10) + 's';
-    particlesContainer.appendChild(p);
-}
-
-// Partículas al mover el mouse
-document.addEventListener('mousemove', e => {
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
-    particle.style.left = e.clientX + 'px';
-    particle.style.top = e.clientY + 'px';
-    particle.style.width = '2px';
-    particle.style.height = '2px';
-    particle.style.background = 'rgba(0,170,255,0.7)';
-    particle.style.animation = 'float 10s linear forwards';
-    particlesContainer.appendChild(particle);
-    setTimeout(() => particlesContainer.removeChild(particle), 1000);
+document.querySelectorAll('.faq-item').forEach(item=>{
+    item.addEventListener('click',()=>{
+        item.classList.toggle('active');
+        const span=item.querySelector('span');
+        span.textContent = item.classList.contains('active') ? '−' : '+';
+    });
 });
 </script>
-
 </body>
 </html>
