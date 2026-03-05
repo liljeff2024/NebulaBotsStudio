@@ -3,10 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NebulaBots</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>NebulaBots Studio</title>
 
 <style>
 
@@ -14,294 +11,243 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins;
-scroll-behavior:smooth;
 }
 
 body{
-background:#0b0b0f;
+font-family:Segoe UI;
+background:#050505;
 color:white;
+scroll-behavior:smooth;
 overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* PARTICLES */
+
+#particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+.particle{
+position:absolute;
+width:2px;
+height:2px;
+background:#00aaff;
+border-radius:50%;
+animation:float linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
+/* NAV */
 
 nav{
 position:fixed;
 top:0;
 width:100%;
-background:#0e0e13;
 display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 10%;
-z-index:1000;
-border-bottom:1px solid #1f1f2a;
-animation:fadeDown 1s;
-}
-
-.logo{
-font-size:22px;
-font-weight:600;
-color:#8a6bff;
-}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-nav ul li a{
-color:white;
-text-decoration:none;
-font-size:14px;
-transition:0.3s;
-position:relative;
-}
-
-nav ul li a:hover{
-color:#8a6bff;
-}
-
-nav ul li a::after{
-content:'';
-position:absolute;
-width:0%;
-height:2px;
-background:#8a6bff;
-left:0;
-bottom:-4px;
-transition:0.3s;
-}
-
-nav ul li a:hover::after{
-width:100%;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
 justify-content:center;
-text-align:center;
-padding:0 20px;
-}
-
-.hero h1{
-font-size:55px;
-background:linear-gradient(90deg,#8a6bff,#5d3fff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-animation:fadeUp 1s;
-}
-
-.hero p{
-margin-top:15px;
-font-size:18px;
-opacity:0.8;
-animation:fadeUp 1.3s;
-}
-
-.hero-buttons{
-margin-top:30px;
-display:flex;
-gap:20px;
-animation:fadeUp 1.6s;
-}
-
-.btn{
-padding:14px 28px;
-border-radius:8px;
-border:none;
-font-size:14px;
-cursor:pointer;
-transition:0.3s;
-text-decoration:none;
-}
-
-.btn-primary{
-background:#8a6bff;
-color:white;
-}
-
-.btn-primary:hover{
-transform:scale(1.08);
-box-shadow:0 0 20px #8a6bff;
-}
-
-.btn-secondary{
-background:#1a1a25;
-color:white;
-}
-
-.btn-secondary:hover{
-background:#2a2a40;
-}
-
-/* FEATURES */
-
-.features{
-padding:120px 10%;
-text-align:center;
-}
-
-.features h2{
-font-size:35px;
-margin-bottom:60px;
-}
-
-.features-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:30px;
+background:rgba(0,0,0,0.85);
+padding:15px;
+border-bottom:1px solid #00aaff;
+z-index:999;
 }
 
-.feature{
-background:#11111a;
-padding:30px;
-border-radius:12px;
-transition:0.3s;
-border:1px solid #1d1d2a;
+nav a{
+color:#00ffff;
+font-weight:bold;
+transition:0.4s;
 }
 
-.feature:hover{
-transform:translateY(-8px);
-box-shadow:0 0 20px rgba(138,107,255,0.3);
+nav a:hover{
+color:white;
+text-shadow:0 0 20px #00ffff;
+transform:scale(1.1);
 }
 
-.feature h3{
-margin-bottom:10px;
-color:#8a6bff;
+/* HEADER */
+
+header{
+text-align:center;
+padding:140px 20px;
+background:linear-gradient(180deg,#001a33,#000);
 }
 
-/* PLANES */
+header img{
+width:220px;
+margin-bottom:20px;
+animation:logoFloat 4s infinite alternate;
+}
 
-.pricing{
-padding:120px 10%;
+@keyframes logoFloat{
+from{transform:translateY(0);}
+to{transform:translateY(-20px);}
+}
+
+header h1{
+font-size:4em;
+color:#00ffff;
+text-shadow:0 0 25px #00ffff;
+}
+
+header p{
+max-width:700px;
+margin:auto;
+margin-top:20px;
+font-size:1.3em;
+color:#ccc;
+}
+
+.cta-button{
+display:inline-block;
+margin-top:40px;
+padding:16px 45px;
+border-radius:30px;
+background:linear-gradient(90deg,#00ffff,#1e90ff);
+color:white;
+font-weight:bold;
+box-shadow:0 0 30px #00aaff;
+transition:0.4s;
+animation:pulse 2s infinite;
+}
+
+.cta-button:hover{
+transform:scale(1.1);
+box-shadow:0 0 60px #00ffff;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 20px #00aaff;}
+50%{box-shadow:0 0 50px #00ffff;}
+100%{box-shadow:0 0 20px #00aaff;}
+}
+
+/* SECTIONS */
+
+section{
+padding:100px 20px;
 text-align:center;
 }
 
-.pricing h2{
-font-size:35px;
-margin-bottom:60px;
+section h2{
+font-size:3em;
+color:#00ffff;
+margin-bottom:25px;
+text-shadow:0 0 20px #00ffff;
 }
+
+/* PLANS */
 
 .plans{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 gap:30px;
 }
 
 .plan{
-background:#11111a;
-padding:40px;
-border-radius:12px;
-border:1px solid #1d1d2a;
-position:relative;
-transition:0.3s;
+background:#111;
+padding:30px;
+width:300px;
+border-radius:20px;
+box-shadow:0 0 25px rgba(0,170,255,0.5);
+transition:0.5s;
 }
 
 .plan:hover{
-transform:scale(1.05);
-box-shadow:0 0 20px rgba(138,107,255,0.3);
-}
-
-.popular{
-position:absolute;
-top:-12px;
-left:50%;
-transform:translateX(-50%);
-background:#8a6bff;
-padding:5px 15px;
-font-size:12px;
-border-radius:20px;
+transform:scale(1.07);
+box-shadow:0 0 55px #00ffff;
 }
 
 .plan h3{
+color:#00ffff;
 margin-bottom:10px;
 }
 
-.price{
-font-size:28px;
-margin:15px 0;
-color:#8a6bff;
+.plan .price{
+font-size:2em;
+margin:10px 0;
 }
 
-.plan ul{
-list-style:none;
-margin-bottom:20px;
+.popular{
+color:black;
+background:#00ffff;
+padding:4px 10px;
+border-radius:10px;
+font-weight:bold;
+display:inline-block;
+margin-bottom:10px;
 }
 
-.plan ul li{
-margin:8px 0;
-font-size:14px;
+.plan button{
+margin-top:15px;
+padding:10px 25px;
+border-radius:20px;
+border:none;
+background:linear-gradient(90deg,#00ffff,#1e90ff);
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:0.4s;
+}
+
+.plan button:hover{
+transform:scale(1.1);
+box-shadow:0 0 30px #00ffff;
 }
 
 /* FAQ */
 
-.faq{
-padding:120px 10%;
-}
-
-.faq h2{
-text-align:center;
-margin-bottom:50px;
-font-size:35px;
-}
-
 .faq-item{
-background:#11111a;
+max-width:700px;
+margin:auto;
 margin-bottom:15px;
-border-radius:10px;
-overflow:hidden;
-border:1px solid #1d1d2a;
+text-align:left;
 }
 
 .faq-question{
-padding:18px;
+background:#111;
+padding:15px;
 cursor:pointer;
-font-weight:500;
-display:flex;
-justify-content:space-between;
+border-radius:10px;
+font-weight:bold;
+color:#00ffff;
+box-shadow:0 0 15px #00aaff;
+transition:0.3s;
+}
+
+.faq-question:hover{
+box-shadow:0 0 35px #00ffff;
 }
 
 .faq-answer{
 max-height:0;
 overflow:hidden;
-padding:0 18px;
-transition:0.4s;
-opacity:0.7;
+transition:0.5s;
+background:#1a1a1a;
+padding:0 15px;
 }
 
-.faq-item.active .faq-answer{
-max-height:200px;
-padding:18px;
+.faq-answer p{
+padding:15px 0;
+color:#ccc;
 }
 
 /* FOOTER */
 
 footer{
-padding:30px;
 text-align:center;
-background:#0e0e13;
-border-top:1px solid #1f1f2a;
-opacity:0.7;
-}
-
-/* ANIMATIONS */
-
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(30px)}
-to{opacity:1;transform:translateY(0)}
-}
-
-@keyframes fadeDown{
-from{opacity:0;transform:translateY(-30px)}
-to{opacity:1;transform:translateY(0)}
+padding:50px;
+background:#0a0a0a;
+color:#777;
 }
 
 </style>
@@ -309,190 +255,173 @@ to{opacity:1;transform:translateY(0)}
 
 <body>
 
-<nav>
-<div class="logo">NebulaBots</div>
+<div id="particles"></div>
 
-<ul>
-<li><a href="#inicio">Inicio</a></li>
-<li><a href="#features">Características</a></li>
-<li><a href="#pricing">Planes</a></li>
-<li><a href="#faq">FAQ</a></li>
-</ul>
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#planes">Planes</a>
+<a href="#caracteristicas">Características</a>
+<a href="#faq">FAQ</a>
+<a href="#info">Info</a>
 </nav>
 
-<!-- HERO -->
+<header id="inicio">
 
-<section class="hero" id="inicio">
+<img src="logo.png">
 
-<h1>NebulaBots</h1>
-<p>Potencia tu servidor de Discord con bots profesionales</p>
+<h1>NebulaBots Studio</h1>
 
-<div class="hero-buttons">
+<p>
+Creamos bots personalizados para Discord totalmente adaptados a tu servidor.
+Moderación, economía, niveles, tickets y sistemas avanzados diseñados
+para mejorar tu comunidad.
+</p>
 
-<a class="btn btn-primary" href="https://discord.gg/bFGs24vaJ9" target="_blank">
-Invitar al Bot
-</a>
+<a href="#planes" class="cta-button">Ver Planes</a>
 
-<a class="btn btn-secondary" href="#pricing">
-Ver Planes
-</a>
+</header>
 
-</div>
+<section id="planes">
 
-</section>
-
-<!-- FEATURES -->
-
-<section class="features" id="features">
-
-<h2>Características</h2>
-
-<div class="features-grid">
-
-<div class="feature">
-<h3>AntiRaid</h3>
-<p>Protección avanzada contra raids y ataques.</p>
-</div>
-
-<div class="feature">
-<h3>Moderación</h3>
-<p>Comandos completos para administrar tu servidor.</p>
-</div>
-
-<div class="feature">
-<h3>Configuración fácil</h3>
-<p>Panel simple para configurar todo en minutos.</p>
-</div>
-
-<div class="feature">
-<h3>Alta velocidad</h3>
-<p>Servidores rápidos con uptime garantizado.</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- PLANES -->
-
-<section class="pricing" id="pricing">
-
-<h2>Planes</h2>
+<h2>Planes Disponibles</h2>
 
 <div class="plans">
 
 <div class="plan">
-
-<h3>Gratis</h3>
-<div class="price">0 Robux</div>
-
-<ul>
-<li>Comandos básicos</li>
-<li>Moderación básica</li>
-<li>Soporte limitado</li>
-</ul>
-
-<a class="btn btn-secondary" href="#">Empezar</a>
-
+<h3>Plan Básico</h3>
+<p>5 comandos personalizados</p>
+<p>Embeds simples</p>
+<p>Soporte básico</p>
+<div class="price">50 ROBUX</div>
+<button>Más Info</button>
 </div>
 
-
 <div class="plan">
-
-<div class="popular">Más popular</div>
-
-<h3>Premium</h3>
-<div class="price">200 Robux</div>
-
-<ul>
-<li>Todos los comandos</li>
-<li>AntiRaid avanzado</li>
-<li>Soporte prioritario</li>
-<li>Actualizaciones premium</li>
-</ul>
-
-<a class="btn btn-primary" href="#">Comprar</a>
-
+<h3>Plan Intermedio</h3>
+<p>10 comandos</p>
+<p>Embeds personalizados</p>
+<p>Sistema de permisos</p>
+<div class="price">100 ROBUX</div>
+<button>Más Info</button>
 </div>
 
+<div class="plan">
+<span class="popular">Más Popular</span>
+<h3>Plan Pro</h3>
+<p>20 comandos</p>
+<p>Sistemas avanzados</p>
+<p>Embeds premium</p>
+<div class="price">200 ROBUX</div>
+<button>Más Info</button>
+</div>
 
 <div class="plan">
-
-<h3>Ultra</h3>
-<div class="price">400 Robux</div>
-
-<ul>
-<li>Todo premium</li>
-<li>Funciones exclusivas</li>
-<li>Soporte 24/7</li>
-</ul>
-
-<a class="btn btn-secondary" href="#">Comprar</a>
-
+<h3>Plan Ultra</h3>
+<p>Comandos ilimitados</p>
+<p>Tickets / Economía</p>
+<p>Soporte prioritario</p>
+<div class="price">350+ ROBUX</div>
+<button>Más Info</button>
 </div>
 
 </div>
 
 </section>
 
-<!-- FAQ -->
+<section id="caracteristicas">
 
-<section class="faq" id="faq">
+<h2>Características</h2>
+
+<p style="max-width:800px;margin:auto;color:#ccc;font-size:1.2em">
+
+Nuestros bots incluyen sistemas avanzados como moderación automática,
+economía completa, niveles, tickets, verificación, embeds personalizados
+y mucho más.
+
+Cada bot es desarrollado desde cero para adaptarse completamente a tu
+servidor de Discord.
+
+</p>
+
+</section>
+
+<section id="faq">
 
 <h2>Preguntas Frecuentes</h2>
 
 <div class="faq-item">
-<div class="faq-question">
-¿NebulaBots es gratis?
-<span>+</span>
+<div class="faq-question">¿Cuánto tarda el bot?</div>
+<div class="faq-answer"><p>Entre 24 y 72 horas dependiendo del plan.</p></div>
 </div>
-
-<div class="faq-answer">
-Sí, existe un plan gratuito con funciones básicas.
-</div>
-</div>
-
 
 <div class="faq-item">
-<div class="faq-question">
-¿Cómo compro un plan?
-<span>+</span>
+<div class="faq-question">¿Incluye soporte?</div>
+<div class="faq-answer"><p>Sí, todos los planes incluyen soporte.</p></div>
 </div>
-
-<div class="faq-answer">
-Puedes comprar los planes usando Robux en nuestra tienda.
-</div>
-</div>
-
 
 <div class="faq-item">
-<div class="faq-question">
-¿Dónde obtengo soporte?
-<span>+</span>
+<div class="faq-question">¿Se puede modificar después?</div>
+<div class="faq-answer"><p>Sí, puedes pedir modificaciones.</p></div>
 </div>
 
-<div class="faq-answer">
-En nuestro servidor oficial de Discord.
-</div>
-</div>
+</section>
+
+<section id="info">
+
+<h2>Sobre NebulaBots</h2>
+
+<p style="max-width:850px;margin:auto;color:#ccc;font-size:1.2em">
+
+NebulaBots Studio se especializa en la creación de bots personalizados
+para Discord. Nuestro objetivo es ofrecer herramientas únicas para
+servidores que quieren destacar.
+
+Nuestros sistemas incluyen moderación automática, economía,
+verificación, tickets, niveles, reacciones, sistemas de seguridad
+y mucho más.
+
+</p>
 
 </section>
 
 <footer>
 
-© 2025 NebulaBots - Todos los derechos reservados
+© 2026 NebulaBots Studio
 
 </footer>
 
 <script>
 
-const faq = document.querySelectorAll(".faq-item");
+/* FAQ */
 
-faq.forEach(item=>{
-item.addEventListener("click",()=>{
-item.classList.toggle("active");
-});
-});
+document.querySelectorAll(".faq-question").forEach(q=>{
+q.onclick=()=>{
+let a=q.nextElementSibling
+
+if(a.style.maxHeight){
+a.style.maxHeight=null
+}else{
+a.style.maxHeight=a.scrollHeight+"px"
+}
+}
+})
+
+/* PARTICLES */
+
+let container=document.getElementById("particles")
+
+for(let i=0;i<120;i++){
+
+let p=document.createElement("div")
+p.className="particle"
+
+p.style.left=Math.random()*100+"vw"
+p.style.top=Math.random()*100+"vh"
+p.style.animationDuration=10+Math.random()*20+"s"
+
+container.appendChild(p)
+
+}
 
 </script>
 
