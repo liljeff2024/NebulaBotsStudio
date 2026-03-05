@@ -5,111 +5,105 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NebulaBots Studio - Ultra PRO</title>
 <style>
-/* RESET Y GENERAL */
+/* Reset y general */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#050505;color:#eee;overflow-x:hidden;scroll-behavior:smooth;}
 a{text-decoration:none;color:inherit;}
+section, header, footer{opacity:0;transform:translateY(60px);transition:all 1.2s ease-in-out;}
 
-/* PARTICULAS */
+/* Fondo partículas */
 #particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;}
 .particle{position:absolute;border-radius:50%;background:rgba(0,170,255,0.7);width:2px;height:2px;animation:float linear infinite;}
 @keyframes float{0%{transform:translateY(0);}100%{transform:translateY(-110vh);}}
 
-/* ANIMACIONES GENERALES */
-.slide-up{opacity:0;transform:translateY(60px);transition:all 1s ease-out;}
-.show-slide{opacity:1;transform:translateY(0);}
-@keyframes glow{0%{text-shadow:0 0 20px #00ffff;}100%{text-shadow:0 0 55px #1e90ff;}}
-@keyframes pulse{0%{box-shadow:0 0 25px #00aaff;}50%{box-shadow:0 0 60px #00ffff;}100%{box-shadow:0 0 25px #00aaff;}}
-
-/* HEADER */
+/* Header */
 header{text-align:center;padding:120px 20px 60px;position:relative;background:linear-gradient(180deg,#001f3f,#000010);}
 header img{width:220px;margin-bottom:20px;border-radius:20px;box-shadow:0 0 55px #00aaff;animation:floatLogo 4s ease-in-out infinite alternate;}
 @keyframes floatLogo{0%{transform:translateY(0);}100%{transform:translateY(-25px);}}
 header h1{font-size:4em;font-weight:bold;background:linear-gradient(90deg,#00ffff,#1e90ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 25px #00ffff;animation:glow 2s infinite alternate;}
-header p{font-size:1.5em;max-width:800px;margin:0 auto 30px auto;line-height:1.6;color:#ccc;animation:glow 2s infinite alternate;}
+header p{font-size:1.5em;max-width:800px;margin:0 auto 30px auto;line-height:1.6;color:#ccc;}
 .cta-button{display:inline-block;padding:15px 45px;font-size:1.2em;color:#fff;background:linear-gradient(90deg,#00ffff,#1e90ff);border-radius:25px;box-shadow:0 0 30px #00aaff;transition:0.6s;animation:pulse 2s infinite;}
 .cta-button:hover{background:linear-gradient(90deg,#1e90ff,#00ffff);box-shadow:0 0 60px #00ffff;transform:scale(1.1);}
+@keyframes glow{0%{text-shadow:0 0 20px #00ffff;}100%{text-shadow:0 0 55px #1e90ff;}}
+@keyframes pulse{0%{box-shadow:0 0 25px #00aaff;}50%{box-shadow:0 0 60px #00ffff;}100%{box-shadow:0 0 25px #00aaff;}}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;width:100%;background:rgba(10,10,10,0.85);padding:15px;display:flex;justify-content:center;gap:25px;z-index:999;border-bottom:1px solid #00aaff;}
-nav a{color:#00ffff;font-weight:bold;transition:0.5s;animation:glow 2s infinite alternate;}
-nav a:hover{color:#fff;text-shadow:0 0 25px #00ffff;transform:scale(1.05);}
+/* Menú fijo animado */
+nav{position:fixed;top:0;left:0;width:100%;background:rgba(10,10,10,0.85);padding:15px;display:flex;justify-content:center;gap:25px;z-index:999;border-bottom:1px solid #00aaff;animation:slideNav 1s ease-out forwards;opacity:0;transform:translateY(-60px);}
+@keyframes slideNav{0%{opacity:0;transform:translateY(-60px);}100%{opacity:1;transform:translateY(0);}}
+nav a{color:#00ffff;font-weight:bold;transition:0.5s;animation:glowNav 2s infinite alternate;}
+nav a:hover{color:#fff;text-shadow:0 0 20px #00ffff;transform:scale(1.05);}
+@keyframes glowNav{0%{text-shadow:0 0 5px #00ffff;}100%{text-shadow:0 0 25px #1e90ff;}}
 
-/* SECCIONES */
+/* Secciones */
 section{padding:80px 20px;transition:opacity 1s, transform 1s;}
-section h2{font-size:3em;color:#00ffff;margin-bottom:20px;text-shadow:0 0 20px #1e90ff;animation:glow 2s infinite alternate;text-align:center;}
-section p{max-width:900px;margin:0 auto;font-size:1.3em;line-height:1.7;color:#ccc;text-align:center;}
+section h2{font-size:3em;color:#00ffff;margin-bottom:20px;text-shadow:0 0 20px #1e90ff;animation:neon 2s infinite alternate;}
+section p{max-width:850px;margin:0 auto;font-size:1.3em;line-height:1.7;color:#ccc;text-align:center;}
+section .discord-links{margin-top:30px;display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
+.discord-links a{display:flex;align-items:center;gap:10px;padding:12px 20px;background:linear-gradient(90deg,#00ffff,#1e90ff);border-radius:15px;color:#fff;font-weight:bold;box-shadow:0 0 25px #00aaff;transition:0.5s;animation:pulse 2s infinite;}
+.discord-links a:hover{background:linear-gradient(90deg,#1e90ff,#00ffff);box-shadow:0 0 50px #00ffff;transform:scale(1.05);}
+@keyframes neon{0%{text-shadow:0 0 15px #00ffff;}100%{text-shadow:0 0 50px #1e90ff;}}
 
-/* DISCORD LINKS */
-.discord-links{margin-top:30px;display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
-.discord-links a{display:flex;align-items:center;gap:10px;padding:15px 30px;background:linear-gradient(90deg,#00ffff,#1e90ff);border-radius:25px;color:#fff;font-weight:bold;box-shadow:0 0 35px #00aaff;transition:0.5s;animation:pulse 2s infinite;}
-.discord-links a:hover{background:linear-gradient(90deg,#1e90ff,#00ffff);box-shadow:0 0 60px #00ffff;transform:scale(1.05);}
-
-/* PLANES */
-.plans{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:40px;}
-.plan{background:linear-gradient(145deg,#111,#1a1a1a);border-radius:25px;width:300px;padding:35px 20px;text-align:center;box-shadow:0 0 40px rgba(0,170,255,0.7);transition:all 0.7s;position:relative;}
+/* Planes */
+.plans{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;}
+.plan{background:linear-gradient(145deg,#111,#1a1a1a);border-radius:25px;width:300px;padding:35px 20px;text-align:center;box-shadow:0 0 40px rgba(0,170,255,0.7);transition:transform 0.7s,box-shadow 0.7s;position:relative;}
 .plan:hover{transform:scale(1.08);box-shadow:0 0 70px rgba(0,170,255,0.85);}
 .plan h3{color:#00ffff;margin-bottom:15px;text-shadow:0 0 15px #1e90ff;}
 .plan p{color:#ccc;margin:8px 0;}
 .plan .price{font-size:2em;color:#00ffff;font-weight:bold;margin:15px 0;}
-.plan .discount{color:#ff5e5e;font-weight:bold;margin-bottom:10px;}
-.plan .badge-popular{position:absolute;top:-12px;right:-12px;background:#ffdd00;color:#000;font-weight:bold;padding:5px 12px;border-radius:20px;box-shadow:0 0 15px #ffdd00;animation:pulse 2s infinite;}
-
-/* PLAN BOTONES */
-.plan button{display:inline-block;margin-top:12px;padding:12px 25px;border-radius:25px;background:linear-gradient(90deg,#00ffff,#1e90ff);color:#fff;font-weight:bold;box-shadow:0 0 35px #00aaff;transition:0.5s;cursor:pointer;animation:pulse 2s infinite;}
+.plan .discount{color:#ff5e5e;font-weight:bold;margin-bottom:10px;animation:glowDiscount 2s infinite alternate;}
+@keyframes glowDiscount{0%{text-shadow:0 0 10px #ff5e5e;}100%{text-shadow:0 0 25px #ff0000;}}
+.plan .popular{position:absolute;top:-10px;right:-10px;background:#ff5e5e;color:#fff;font-weight:bold;padding:5px 10px;border-radius:15px;text-shadow:0 0 10px #ff0000;animation:pulse 2s infinite;}
+.plan button{display:inline-block;margin-top:12px;padding:12px 25px;border-radius:20px;background:linear-gradient(90deg,#00ffff,#1e90ff);color:#fff;font-weight:bold;box-shadow:0 0 30px #00aaff;transition:0.5s;cursor:pointer;animation:pulse 2s infinite;}
 .plan button:hover{background:linear-gradient(90deg,#1e90ff,#00ffff);box-shadow:0 0 60px #00ffff;transform:scale(1.1);}
 
-/* MODAL */
+/* Modal */
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);justify-content:center;align-items:center;z-index:1000;}
-.modal-content{background:linear-gradient(145deg,#111,#1a1a1a);border-radius:25px;padding:35px;width:90%;max-width:650px;position:relative;box-shadow:0 0 70px rgba(0,170,255,0.85);transform:scale(0);opacity:0;transition:all 0.6s ease;}
+.modal-content{background:linear-gradient(145deg,#111,#1a1a1a);border-radius:25px;padding:35px;width:90%;max-width:700px;position:relative;box-shadow:0 0 70px rgba(0,170,255,0.85);transform:scale(0);opacity:0;transition:all 0.6s ease;}
 .modal-content.show{transform:scale(1);opacity:1;}
 .modal-content h3{color:#00ffff;margin-bottom:15px;text-shadow:0 0 15px #1e90ff;}
 .modal-content p{color:#ccc;line-height:1.6;margin-bottom:15px;}
 .modal-content .close{position:absolute;top:15px;right:15px;font-size:1.7em;color:#fff;cursor:pointer;transition:0.3s;}
 .modal-content .close:hover{color:#00ffff;transform:scale(1.2);}
-.modal-content .discord-link{display:inline-block;padding:12px 25px;border-radius:25px;background:linear-gradient(90deg,#00ffff,#1e90ff);color:#fff;box-shadow:0 0 35px #00aaff;transition:0.5s;animation:pulse 2s infinite;}
+.modal-content .discord-link{display:inline-block;padding:12px 25px;border-radius:20px;background:linear-gradient(90deg,#00ffff,#1e90ff);color:#fff;box-shadow:0 0 30px #00aaff;transition:0.5s;animation:pulse 2s infinite;}
 .modal-content .discord-link:hover{background:linear-gradient(90deg,#1e90ff,#00ffff);box-shadow:0 0 60px #00ffff;transform:scale(1.05);}
 
 /* FAQ */
-.faq-item{background:#111;border-radius:20px;padding:20px;margin:15px 0;cursor:pointer;transition:0.5s;box-shadow:0 0 25px rgba(0,170,255,0.5);}
-.faq-item:hover{box-shadow:0 0 50px rgba(0,170,255,0.85);}
-.faq-question{font-weight:bold;color:#00ffff;text-shadow:0 0 15px #1e90ff;}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.6s ease;padding-top:0;margin-top:0;color:#ccc;line-height:1.5em;}
-.faq-item.open .faq-answer{max-height:400px;padding-top:15px;margin-top:10px;}
+.faq-item{margin-bottom:15px;border-radius:15px;background:#111;padding:15px;box-shadow:0 0 30px rgba(0,170,255,0.5);transition:0.5s;cursor:pointer;animation:fadeIn 1s ease forwards;}
+.faq-item h4{color:#00ffff;position:relative;}
+.faq-item h4::after{content:'+';position:absolute;right:15px;top:0;font-size:1.5em;color:#ff5e5e;animation:glowFAQ 2s infinite alternate;}
+.faq-item p{max-height:0;overflow:hidden;transition:max-height 0.5s ease;line-height:1.5;color:#ccc;}
+@keyframes glowFAQ{0%{text-shadow:0 0 10px #ff5e5e;}100%{text-shadow:0 0 25px #ff0000;}}
+@keyframes fadeIn{0%{opacity:0;transform:translateY(20px);}100%{opacity:1;transform:translateY(0);}}
 
-/* FOOTER */
+/* Footer */
 footer{text-align:center;padding:50px 20px;background:#0a0a0a;color:#777;font-size:0.95em;}
 
-/* RESPONSIVE */
-@media(max-width:768px){header h1{font-size:3em;} .plans{flex-direction:column;align-items:center;} .plan{width:90%;} .discord-links a{width:80%;justify-content:center;}}
+/* Responsive */
+@media(max-width:768px){header h1{font-size:3em;} .plans{flex-direction:column;align-items:center;} .plan{width:90%;}}
 </style>
 </head>
 <body>
 
 <div id="particles"></div>
 
-<!-- NAV -->
 <nav>
-<a href="#inicio" class="slide-up">Inicio</a>
-<a href="#planes" class="slide-up">Planes</a>
-<a href="#faq" class="slide-up">FAQ</a>
-<a href="#terminos" class="slide-up">Términos</a>
-<a href="#contacto" class="slide-up">Contacto</a>
+<a href="#inicio">Inicio</a>
+<a href="#planes">Planes</a>
+<a href="#faq">FAQ</a>
+<a href="#terminos">Términos</a>
+<a href="#contacto">Contacto</a>
 </nav>
 
-<!-- HEADER -->
-<header id="inicio" class="slide-up">
+<header id="inicio">
 <img src="logo.png" alt="Logo NebulaBots">
 <h1>NebulaBots Studio</h1>
 <p>Creación de bots totalmente personalizados. Comandos, sistemas de economía, moderación, tickets, niveles y soporte profesional para tu servidor.</p>
 <a href="#planes" class="cta-button" id="verPlanesBtn">Ver Planes</a>
 </header>
 
-<!-- PLANES -->
-<section id="planes" class="slide-up">
+<section id="planes">
 <h2>Nuestros Planes</h2>
 <div class="plans">
-
 <div class="plan">
 <div class="discount">50% de descuento ¡Lanzamiento!</div>
 <h3>Plan Básico</h3>
@@ -130,10 +124,10 @@ footer{text-align:center;padding:50px 20px;background:#0a0a0a;color:#777;font-si
 </div>
 
 <div class="plan">
-<div class="badge-popular">Más Popular</div>
 <div class="discount">50% de descuento ¡Lanzamiento!</div>
+<div class="popular">Más popular</div>
 <h3>Plan Pro</h3>
-<p>20 comandos personalizados</p>
+<p>20 comandos</p>
 <p>Economía o moderación básica</p>
 <p>Embeds premium + botones</p>
 <div class="price">200 ROBUX</div>
@@ -149,54 +143,46 @@ footer{text-align:center;padding:50px 20px;background:#0a0a0a;color:#777;font-si
 <div class="price">350+ ROBUX</div>
 <button class="open-modal" data-plan="ultra">Más info</button>
 </div>
-
 </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" class="slide-up">
+<section id="faq">
 <h2>Preguntas Frecuentes (FAQ)</h2>
 <div class="faq-item">
-<div class="faq-question">¿Qué incluye un proyecto básico?</div>
-<div class="faq-answer">
-5 comandos personalizados, embed simple y soporte técnico inicial según nuestros términos.
-</div>
+<h4>¿Cómo solicito un bot personalizado?</h4>
+<p>Debes abrir un ticket en nuestro servidor de Discord o enviar un mensaje directo al desarrollador con tus especificaciones.</p>
 </div>
 <div class="faq-item">
-<div class="faq-question">¿Qué pasa si quiero más cambios?</div>
-<div class="faq-answer">
-Cambios importantes después del inicio pueden generar costos adicionales. Consulta nuestros términos para más detalles.
-</div>
+<h4>¿Puedo modificar mi bot después de la entrega?</h4>
+<p>Se permiten modificaciones menores, pero cambios importantes pueden generar costos adicionales. No nos hacemos responsables si se altera el código original.</p>
 </div>
 <div class="faq-item">
-<div class="faq-question">¿Hay reembolso?</div>
-<div class="faq-answer">
-Se permite solicitar reembolso dentro de las primeras 48 horas si el proyecto no ha sido entregado. Después no se aceptan reembolsos.
-</div>
+<h4>¿Qué métodos de pago aceptan?</h4>
+<p>Aceptamos Robux y otros métodos según lo acordado. Para proyectos grandes se requiere 50% adelantado y 50% al finalizar.</p>
 </div>
 <div class="faq-item">
-<div class="faq-question">¿Incluyen hosting?</div>
-<div class="faq-answer">
-NebulaBots Studio no se encarga del hosting. El cliente debe administrar su propio VPS/hosting.
-</div>
+<h4>¿Hay garantía o soporte?</h4>
+<p>Todos nuestros bots incluyen soporte técnico básico y corrección de errores detectados dentro del período inicial.</p>
 </div>
 </section>
 
-<!-- TERMINOS -->
-<section id="terminos" class="slide-up">
+<section id="terminos">
 <h2>Términos y Condiciones</h2>
-<p>Todos los pagos confirman aceptación de nuestros términos. No se entregará el bot hasta que se complete el pago total. Reembolsos permitidos solo dentro de las primeras 48 horas. El cliente es responsable del hosting y seguridad del token. Modificaciones al código original pueden generar pérdida de garantía.</p>
+<p>
+© 2026 NebulaBots Studio. Al realizar un pago, el cliente acepta automáticamente todos los términos y condiciones oficiales que incluyen pagos, reembolsos, hosting, modificaciones, propiedad intelectual y soporte detallado.
+</p>
+<p>Consulta la sección de información general para detalles completos sobre cada política y garantía.</p>
 </section>
 
-<!-- CONTACTO -->
-<section id="contacto" class="slide-up">
+<section id="contacto">
 <h2>Contacto</h2>
+<p>Para solicitar tu bot personalizado:</p>
 <div class="discord-links">
-<a href="https://discord.gg/bFGs24vaJ9" target="_blank">💬 Abrir Ticket / Servidor Tienda</a>
+<a href="https://discord.gg/bFGs24vaJ9" target="_blank" class="cta-button">💬 Abrir Ticket / Servidor Tienda</a>
 </div>
 </section>
 
-<!-- MODAL -->
+<!-- Modal -->
 <div class="modal" id="modal">
 <div class="modal-content" id="modal-content">
 <span class="close">&times;</span>
@@ -206,19 +192,18 @@ NebulaBots Studio no se encarga del hosting. El cliente debe administrar su prop
 </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
 © 2026 NebulaBots Studio | Todos los derechos reservados
 </footer>
 
 <script>
-// SCROLL SUAVE
+// Scroll lento para Ver Planes
 document.getElementById('verPlanesBtn').addEventListener('click',e=>{
 e.preventDefault();
 document.getElementById('planes').scrollIntoView({behavior:'smooth'});
 });
 
-// PARTICULAS
+// Partículas
 const particlesCount=200;
 const particlesContainer=document.getElementById('particles');
 for(let i=0;i<particlesCount;i++){
@@ -244,61 +229,106 @@ particlesContainer.appendChild(particle);
 setTimeout(()=>particlesContainer.removeChild(particle),1000);
 });
 
-// MODAL
-const modal=document.getElementById('modal');
-const modalContent=document.getElementById('modal-content');
-const modalTitle=document.getElementById('modal-title');
-const modalDesc=document.getElementById('modal-desc');
-const modalLink=document.getElementById('modal-link');
-document.querySelectorAll('.open-modal').forEach(btn=>{
-btn.addEventListener('click',e=>{
-e.preventDefault();
-const plan=btn.dataset.plan;
-switch(plan){
-case'basico':
-modalTitle.textContent='Plan Básico';
-modalDesc.textContent='5 comandos, embed simple, soporte básico y mantenimiento incluido según términos.';
-modalLink.href='https://discord.gg/bFGs24vaJ9';
-break;
-case'intermedio':
-modalTitle.textContent='Plan Intermedio';
-modalDesc.textContent='10 comandos personalizados, embeds, sistema básico de permisos, soporte directo y actualizaciones incluidas.';
-modalLink.href='https://discord.gg/bFGs24vaJ9';
-break;
-case'pro':
-modalTitle.textContent='Plan Pro';
-modalDesc.textContent='20 comandos, economía/moderación básica, embeds premium + botones, soporte avanzado y prioridad en actualizaciones.';
-modalLink.href='https://discord.gg/bFGs24vaJ9';
-break;
-case'ultra':
-modalTitle.textContent='Plan Ultra';
-modalDesc.textContent='Comandos ilimitados, sistemas avanzados (tickets, niveles, economía completa), soporte prioritario y actualizaciones premium.';
-modalLink.href='https://discord.gg/bFGs24vaJ9';
-break;
-}
-modal.classList.add('show');
-});
-});
-document.querySelector('.close').addEventListener('click',()=>{modal.classList.remove('show');});
-window.addEventListener('click',e=>{if(e.target==modal) modal.classList.remove('show');});
 
-// SLIDE-IN SECCIONES
-const sections=document.querySelectorAll('.slide-up');
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show-slide');}});
-},{threshold:0.1});
-sections.forEach(sec=>observer.observe(sec));
+// Modal
+const modal = document.getElementById('modal');
+const modalContent = document.getElementById('modal-content');
+const modalTitle = document.getElementById('modal-title');
+const modalDesc = document.getElementById('modal-desc');
+const modalLink = document.getElementById('modal-link');
 
-// FAQ
-document.querySelectorAll('.faq-item').forEach(item => {
-  item.addEventListener('click', () => {
-    // Cierra los otros abiertos
-    document.querySelectorAll('.faq-item').forEach(i => {
-      if(i !== item) i.classList.remove('open');
-    });
-    // Alterna el actual
-    item.classList.toggle('open');
+// Abrir modal según plan
+document.querySelectorAll('.open-modal').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const plan = btn.dataset.plan;
+    switch(plan){
+      case 'basico':
+        modalTitle.textContent = 'Plan Básico';
+        modalDesc.innerHTML = '5 comandos personalizados, embed simple, soporte básico, mantenimiento incluido. Perfecto para empezar con tu primer bot.';
+        modalLink.href = 'https://discord.gg/bFGs24vaJ9';
+        break;
+      case 'intermedio':
+        modalTitle.textContent = 'Plan Intermedio';
+        modalDesc.innerHTML = '10 comandos personalizados, embeds avanzados, sistema básico de permisos, soporte directo y actualizaciones incluidas.';
+        modalLink.href = 'https://discord.gg/bFGs24vaJ9';
+        break;
+      case 'pro':
+        modalTitle.innerHTML = 'Plan Pro <span style="color:#ffdd00;font-weight:bold;">★ Más popular</span>';
+        modalDesc.innerHTML = '20 comandos, economía/moderación básica, embeds premium con botones interactivos, soporte avanzado y actualizaciones premium.';
+        modalLink.href = 'https://discord.gg/bFGs24vaJ9';
+        break;
+      case 'ultra':
+        modalTitle.textContent = 'Plan Ultra';
+        modalDesc.innerHTML = 'Comandos ilimitados, sistemas avanzados (tickets, niveles, economía completa), soporte prioritario, actualizaciones y mantenimiento premium.';
+        modalLink.href = 'https://discord.gg/bFGs24vaJ9';
+        break;
+    }
+    modal.classList.add('show');
   });
+});
+
+// Cerrar modal
+document.querySelector('.close').addEventListener('click', () => {
+  modal.classList.remove('show');
+});
+window.addEventListener('click', e => {
+  if(e.target === modal) modal.classList.remove('show');
+});
+
+// Animación slide-in para secciones y nav
+const sections = document.querySelectorAll('header, nav, section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, {threshold:0.1});
+sections.forEach(sec => observer.observe(sec));
+
+// Scroll suave para botón "Ver Planes"
+document.getElementById('verPlanesBtn').addEventListener('click', e => {
+  e.preventDefault();
+  document.getElementById('planes').scrollIntoView({behavior:'smooth'});
+});
+
+// FAQ - desplegable con glow
+const faqs = document.querySelectorAll('.faq-item');
+faqs.forEach(item => {
+  const question = item.querySelector('.faq-question');
+  question.addEventListener('click', () => {
+    const answer = item.querySelector('.faq-answer');
+    answer.classList.toggle('show');
+    question.classList.toggle('active');
+  });
+});
+
+// Partículas flotantes
+const particlesCount = 200;
+const particlesContainer = document.getElementById('particles');
+for(let i=0; i<particlesCount; i++){
+  const p = document.createElement('div');
+  p.classList.add('particle');
+  p.style.left = Math.random()*100+'vw';
+  p.style.top = Math.random()*100+'vh';
+  p.style.width = (Math.random()*3+1)+'px';
+  p.style.height = (Math.random()*3+1)+'px';
+  p.style.animationDuration = (Math.random()*20+10)+'s';
+  particlesContainer.appendChild(p);
+}
+document.addEventListener('mousemove', e => {
+  const particle = document.createElement('div');
+  particle.classList.add('particle');
+  particle.style.left = e.clientX+'px';
+  particle.style.top = e.clientY+'px';
+  particle.style.width = '2px';
+  particle.style.height = '2px';
+  particle.style.background = 'rgba(0,170,255,0.7)';
+  particle.style.animation = 'float 10s linear forwards';
+  particlesContainer.appendChild(particle);
+  setTimeout(()=>particlesContainer.removeChild(particle),1000);
 });
 </script>
 </body>
