@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>NebulaBots Studio</title>
 
 <style>
@@ -11,10 +14,10 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:Segoe UI;
 }
 
 body{
-font-family:Segoe UI;
 background:#050505;
 color:white;
 scroll-behavior:smooth;
@@ -25,8 +28,6 @@ overflow-x:hidden;
 
 #particles{
 position:fixed;
-top:0;
-left:0;
 width:100%;
 height:100%;
 z-index:-1;
@@ -34,223 +35,293 @@ z-index:-1;
 
 .particle{
 position:absolute;
-width:2px;
-height:2px;
 background:#00aaff;
 border-radius:50%;
+width:2px;
+height:2px;
 animation:float linear infinite;
 }
 
 @keyframes float{
-0%{transform:translateY(0);}
-100%{transform:translateY(-120vh);}
+0%{transform:translateY(0)}
+100%{transform:translateY(-120vh)}
 }
 
-/* NAV */
+/* NAVBAR */
 
 nav{
+
 position:fixed;
 top:0;
 width:100%;
 display:flex;
 justify-content:center;
-gap:30px;
-background:rgba(0,0,0,0.85);
+gap:40px;
 padding:15px;
+background:rgba(0,0,0,0.9);
 border-bottom:1px solid #00aaff;
-z-index:999;
+z-index:1000;
+
 }
 
 nav a{
+
 color:#00ffff;
 font-weight:bold;
 transition:0.4s;
+
 }
 
 nav a:hover{
+
 color:white;
-text-shadow:0 0 20px #00ffff;
 transform:scale(1.1);
+text-shadow:0 0 20px #00ffff;
+
 }
 
 /* HEADER */
 
 header{
-text-align:center;
+
 padding:140px 20px;
-background:linear-gradient(180deg,#001a33,#000);
+text-align:center;
+background:linear-gradient(180deg,#001f3f,#000010);
+
 }
 
 header img{
-width:220px;
+
+width:230px;
 margin-bottom:20px;
-animation:logoFloat 4s infinite alternate;
+animation:floatLogo 4s infinite alternate;
+
 }
 
-@keyframes logoFloat{
-from{transform:translateY(0);}
-to{transform:translateY(-20px);}
+@keyframes floatLogo{
+0%{transform:translateY(0)}
+100%{transform:translateY(-20px)}
 }
 
 header h1{
+
 font-size:4em;
 color:#00ffff;
 text-shadow:0 0 25px #00ffff;
+
 }
 
 header p{
-max-width:700px;
+
+max-width:750px;
 margin:auto;
 margin-top:20px;
 font-size:1.3em;
 color:#ccc;
+
 }
 
-.cta-button{
-display:inline-block;
+/* BUTTON */
+
+.cta{
+
 margin-top:40px;
-padding:16px 45px;
-border-radius:30px;
+display:inline-block;
+padding:15px 45px;
+border-radius:25px;
 background:linear-gradient(90deg,#00ffff,#1e90ff);
-color:white;
-font-weight:bold;
 box-shadow:0 0 30px #00aaff;
-transition:0.4s;
+transition:0.5s;
 animation:pulse 2s infinite;
+
 }
 
-.cta-button:hover{
+.cta:hover{
+
 transform:scale(1.1);
 box-shadow:0 0 60px #00ffff;
+
 }
 
 @keyframes pulse{
-0%{box-shadow:0 0 20px #00aaff;}
-50%{box-shadow:0 0 50px #00ffff;}
-100%{box-shadow:0 0 20px #00aaff;}
+
+0%{box-shadow:0 0 25px #00aaff}
+50%{box-shadow:0 0 60px #00ffff}
+100%{box-shadow:0 0 25px #00aaff}
+
 }
 
 /* SECTIONS */
 
 section{
+
 padding:100px 20px;
 text-align:center;
+
 }
 
 section h2{
+
 font-size:3em;
 color:#00ffff;
-margin-bottom:25px;
+margin-bottom:30px;
 text-shadow:0 0 20px #00ffff;
+
 }
 
 /* PLANS */
 
 .plans{
+
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:30px;
+
 }
 
 .plan{
-background:#111;
-padding:30px;
+
 width:300px;
+padding:30px;
+background:#111;
 border-radius:20px;
 box-shadow:0 0 25px rgba(0,170,255,0.5);
 transition:0.5s;
+
 }
 
 .plan:hover{
-transform:scale(1.07);
-box-shadow:0 0 55px #00ffff;
+
+transform:scale(1.08);
+box-shadow:0 0 60px #00ffff;
+
 }
 
-.plan h3{
-color:#00ffff;
-margin-bottom:10px;
-}
+.discount{
 
-.plan .price{
-font-size:2em;
-margin:10px 0;
+color:#ff5e5e;
+font-weight:bold;
+
 }
 
 .popular{
-color:black;
+
 background:#00ffff;
-padding:4px 10px;
+color:black;
+padding:5px 10px;
 border-radius:10px;
 font-weight:bold;
-display:inline-block;
-margin-bottom:10px;
+
+}
+
+.plan h3{
+
+color:#00ffff;
+margin:10px 0;
+
+}
+
+.price{
+
+font-size:2em;
+margin:15px 0;
+
 }
 
 .plan button{
-margin-top:15px;
+
 padding:10px 25px;
-border-radius:20px;
 border:none;
+border-radius:20px;
 background:linear-gradient(90deg,#00ffff,#1e90ff);
-color:white;
-font-weight:bold;
 cursor:pointer;
 transition:0.4s;
+
 }
 
 .plan button:hover{
+
 transform:scale(1.1);
 box-shadow:0 0 30px #00ffff;
+
 }
 
 /* FAQ */
 
-.faq-item{
-max-width:700px;
+.faq{
+
+max-width:800px;
 margin:auto;
-margin-bottom:15px;
-text-align:left;
+
 }
 
-.faq-question{
+.faq-item{
+
+margin-bottom:15px;
+
+}
+
+.question{
+
 background:#111;
 padding:15px;
 cursor:pointer;
 border-radius:10px;
-font-weight:bold;
 color:#00ffff;
+font-weight:bold;
 box-shadow:0 0 15px #00aaff;
 transition:0.3s;
+
 }
 
-.faq-question:hover{
-box-shadow:0 0 35px #00ffff;
+.question:hover{
+
+box-shadow:0 0 30px #00ffff;
+
 }
 
-.faq-answer{
+.answer{
+
 max-height:0;
 overflow:hidden;
 transition:0.5s;
 background:#1a1a1a;
-padding:0 15px;
+
 }
 
-.faq-answer p{
-padding:15px 0;
+.answer p{
+
+padding:15px;
 color:#ccc;
+
+}
+
+/* TERMS */
+
+.terms{
+
+max-width:900px;
+margin:auto;
+text-align:left;
+line-height:1.6;
+color:#ccc;
+
 }
 
 /* FOOTER */
 
 footer{
-text-align:center;
+
 padding:50px;
+text-align:center;
 background:#0a0a0a;
 color:#777;
+
 }
 
 </style>
+
 </head>
 
 <body>
@@ -258,11 +329,13 @@ color:#777;
 <div id="particles"></div>
 
 <nav>
+
 <a href="#inicio">Inicio</a>
 <a href="#planes">Planes</a>
-<a href="#caracteristicas">Características</a>
 <a href="#faq">FAQ</a>
-<a href="#info">Info</a>
+<a href="#terminos">Términos</a>
+<a href="#contacto">Contacto</a>
+
 </nav>
 
 <header id="inicio">
@@ -272,76 +345,82 @@ color:#777;
 <h1>NebulaBots Studio</h1>
 
 <p>
-Creamos bots personalizados para Discord totalmente adaptados a tu servidor.
-Moderación, economía, niveles, tickets y sistemas avanzados diseñados
-para mejorar tu comunidad.
+Desarrollamos bots personalizados para Discord con sistemas avanzados de moderación, economía, tickets, niveles y mucho más.
 </p>
 
-<a href="#planes" class="cta-button">Ver Planes</a>
+<a href="#planes" class="cta">Ver Planes</a>
 
 </header>
 
 <section id="planes">
 
-<h2>Planes Disponibles</h2>
+<h2>Planes</h2>
 
 <div class="plans">
 
 <div class="plan">
+
+<div class="discount">50% DESCUENTO LANZAMIENTO</div>
+
 <h3>Plan Básico</h3>
+
 <p>5 comandos personalizados</p>
 <p>Embeds simples</p>
-<p>Soporte básico</p>
+
 <div class="price">50 ROBUX</div>
-<button>Más Info</button>
+
+<button>Más info</button>
+
 </div>
 
 <div class="plan">
+
+<div class="discount">50% DESCUENTO LANZAMIENTO</div>
+
 <h3>Plan Intermedio</h3>
+
 <p>10 comandos</p>
-<p>Embeds personalizados</p>
-<p>Sistema de permisos</p>
+<p>Sistema permisos</p>
+
 <div class="price">100 ROBUX</div>
-<button>Más Info</button>
+
+<button>Más info</button>
+
 </div>
 
 <div class="plan">
-<span class="popular">Más Popular</span>
+
+<div class="popular">MÁS POPULAR</div>
+
+<div class="discount">50% DESCUENTO LANZAMIENTO</div>
+
 <h3>Plan Pro</h3>
+
 <p>20 comandos</p>
 <p>Sistemas avanzados</p>
-<p>Embeds premium</p>
+
 <div class="price">200 ROBUX</div>
-<button>Más Info</button>
+
+<button>Más info</button>
+
 </div>
 
 <div class="plan">
+
+<div class="discount">50% DESCUENTO LANZAMIENTO</div>
+
 <h3>Plan Ultra</h3>
+
 <p>Comandos ilimitados</p>
-<p>Tickets / Economía</p>
-<p>Soporte prioritario</p>
+<p>Sistemas completos</p>
+
 <div class="price">350+ ROBUX</div>
-<button>Más Info</button>
-</div>
+
+<button>Más info</button>
 
 </div>
 
-</section>
-
-<section id="caracteristicas">
-
-<h2>Características</h2>
-
-<p style="max-width:800px;margin:auto;color:#ccc;font-size:1.2em">
-
-Nuestros bots incluyen sistemas avanzados como moderación automática,
-economía completa, niveles, tickets, verificación, embeds personalizados
-y mucho más.
-
-Cada bot es desarrollado desde cero para adaptarse completamente a tu
-servidor de Discord.
-
-</p>
+</div>
 
 </section>
 
@@ -349,36 +428,83 @@ servidor de Discord.
 
 <h2>Preguntas Frecuentes</h2>
 
+<div class="faq">
+
 <div class="faq-item">
-<div class="faq-question">¿Cuánto tarda el bot?</div>
-<div class="faq-answer"><p>Entre 24 y 72 horas dependiendo del plan.</p></div>
+
+<div class="question">¿Cuánto tarda el bot?</div>
+
+<div class="answer">
+
+<p>Entre 24 y 72 horas dependiendo de la complejidad.</p>
+
+</div>
+
 </div>
 
 <div class="faq-item">
-<div class="faq-question">¿Incluye soporte?</div>
-<div class="faq-answer"><p>Sí, todos los planes incluyen soporte.</p></div>
+
+<div class="question">¿Incluye soporte?</div>
+
+<div class="answer">
+
+<p>Sí, todos los planes incluyen soporte básico.</p>
+
+</div>
+
 </div>
 
 <div class="faq-item">
-<div class="faq-question">¿Se puede modificar después?</div>
-<div class="faq-answer"><p>Sí, puedes pedir modificaciones.</p></div>
+
+<div class="question">¿Incluye hosting?</div>
+
+<div class="answer">
+
+<p>No, el cliente debe proporcionar su propio hosting.</p>
+
+</div>
+
+</div>
+
 </div>
 
 </section>
 
-<section id="info">
+<section id="terminos">
 
-<h2>Sobre NebulaBots</h2>
+<h2>Términos del servicio</h2>
 
-<p style="max-width:850px;margin:auto;color:#ccc;font-size:1.2em">
+<div class="terms">
 
-NebulaBots Studio se especializa en la creación de bots personalizados
-para Discord. Nuestro objetivo es ofrecer herramientas únicas para
-servidores que quieren destacar.
+<p>
 
-Nuestros sistemas incluyen moderación automática, economía,
-verificación, tickets, niveles, reacciones, sistemas de seguridad
-y mucho más.
+NebulaBots Studio desarrolla bots personalizados bajo pedido.
+Cada proyecto es único y creado según las especificaciones del cliente.
+
+El pago confirma la aceptación de todos los términos del servicio.
+
+Reembolsos solo se permiten dentro de las primeras 48 horas si el proyecto no ha sido entregado.
+
+NebulaBots Studio no proporciona hosting.
+
+El cliente es responsable del alojamiento, token y mantenimiento.
+
+El código es propiedad del desarrollador hasta completarse el pago.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="contacto">
+
+<h2>Contacto</h2>
+
+<p>
+
+Servidor oficial:  
+https://discord.gg/bFGs24vaJ9
 
 </p>
 
@@ -394,25 +520,34 @@ y mucho más.
 
 /* FAQ */
 
-document.querySelectorAll(".faq-question").forEach(q=>{
+document.querySelectorAll(".question").forEach(q=>{
+
 q.onclick=()=>{
+
 let a=q.nextElementSibling
 
 if(a.style.maxHeight){
+
 a.style.maxHeight=null
+
 }else{
+
 a.style.maxHeight=a.scrollHeight+"px"
+
 }
+
 }
+
 })
 
 /* PARTICLES */
 
 let container=document.getElementById("particles")
 
-for(let i=0;i<120;i++){
+for(let i=0;i<150;i++){
 
 let p=document.createElement("div")
+
 p.className="particle"
 
 p.style.left=Math.random()*100+"vw"
